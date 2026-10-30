@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { margin: 0; padding: 0; background: #131313; }
+  body { overscroll-behavior: none; }
+  [id] { scroll-margin-top: 6rem; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 1px solid #ff713b; outline-offset: 2px;
+  }
+}
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Mobile type tokens from DESIGN.md (display-xl-mobile / headline-lg-mobile), which the export defines but never wires up. */
+@media (max-width: 767px) {
+  .text-display-xl { font-size: 44px; line-height: 48px; letter-spacing: -0.03em; }
+  .text-headline-lg { font-size: 32px; line-height: 36px; letter-spacing: -0.02em; }
+  .text-headline-md { font-size: 26px; line-height: 32px; }
+}
